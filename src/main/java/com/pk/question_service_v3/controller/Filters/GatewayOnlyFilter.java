@@ -17,7 +17,7 @@ public class GatewayOnlyFilter extends OncePerRequestFilter {
 
     private final byte[] secret;
 
-    public GatewayOnlyFilter(@Value("gateway.internal-secret")String secret)
+    public GatewayOnlyFilter(@Value("${gateway.internal-secret}")String secret)
     {
         this.secret = secret.getBytes(StandardCharsets.UTF_8);
     }
